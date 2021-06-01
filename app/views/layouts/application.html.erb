@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="grid grid-cols-1 gap-6 lg:p-10 xl:grid-cols-3 lg:bg-base-200">
+      <%= render "layouts/header" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
