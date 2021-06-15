@@ -1985,10 +1985,10 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-daisyui@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-1.3.4.tgz#2e7eee10cd6c083e4438531d69d5f9a896423264"
-  integrity sha512-Uu90lVumLF7JZdegds5tOOywD5KQsUwuMVEeVr3YK1lrWPHmT28ww1Rn5m0hCVprH1Dqzy0R/EQwoUsLMKCv5A==
+daisyui@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-1.3.5.tgz#107c1527fdd289bffb086a8a2e0472adbdbf8835"
+  integrity sha512-0Tsqxoo2He7eRCtRgW9KefJSICGFMsuK+PITg4VW/gFnz7qz/R4OXtnHKAYhLucElP+pQNGCXHyDSh4dQu3BEA==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
