@@ -1,27 +1,28 @@
 
-import { Controller } from 'stimulus'
+import { Controller } from "@hotwired/stimulus"
+
 export default class extends Controller {
-  initialize () {
+  initialize() {
     this.apply()
   }
 
-  connect () {
+  connect() {
   }
 
-  apply () {
+  apply() {
     document.documentElement.setAttribute('data-theme', this.theme)
   }
 
-  switch (event) {
+  switch(event) {
     this.theme = event.currentTarget.dataset.themeValue
     this.apply()
   }
 
-  get theme () {
+  get theme() {
     return window.localStorage.getItem('theme')
   }
 
-  set theme (value) {
+  set theme(value) {
     window.localStorage.setItem('theme', value)
   }
 }

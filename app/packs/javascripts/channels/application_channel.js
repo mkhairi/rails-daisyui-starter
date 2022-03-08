@@ -1,1 +1,0 @@
-import consumer from './consumer'
