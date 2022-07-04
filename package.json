@@ -6,7 +6,7 @@
     "@hotwired/turbo-rails": "^7.1.1",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
-    "daisyui": "^2.6.3",
+    "daisyui": "^2.18.0",
     "esbuild": "^0.14.25",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23"
