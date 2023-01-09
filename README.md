@@ -1,7 +1,7 @@
 # README
 Daisy Official Documentation https://daisyui.com/
 
-Demo: http://daisyui-rails.herokuapp.com/
+Demo: https://daisyui.fly.dev/
 
 Current Main Branch: rails 7 + esbuild
 
