@@ -1,80 +1,87 @@
 <div class="navbar col-span-1 shadow-lg xl:col-span-3 bg-neutral-focus text-neutral-content rounded-box">
   <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+    <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </label>
   </div>
   <div class="flex-none px-2 mx-2">
-      <span class="text-lg font-bold">
-        <a href="https://github.com/mkhairi/rails-daisyui-starter"> DaisyUI </a>
-      </span>
+    <span class="text-lg font-bold">
+      <a href="/" aria-current="page" aria-label="Homepage" class="flex-0 btn btn-ghost px-2">
+        <svg width="32" height="32" viewBox="0 0 415 415" xmlns="http://www.w3.org/2000/svg">
+          <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+          <circle cx="207.5" cy="135" r="130" fill="black" fill-opacity=".3"></circle>
+          <circle cx="207.5" cy="135" r="125" fill="white"></circle><circle cx="207.5" cy="135" r="56" fill="#FF9903"></circle>
+        </svg>
+        <div class="font-title inline-flex text-lg md:text-2xl"><span class="lowercase">daisy</span>
+          <span class="uppercase text-[#1AD1A5]">UI</span>
+        </div>
+      </a>
+    </span>
   </div>
   <div class="flex justify-center flex-1 px-2 mx-2">
-      <div class="items-stretch hidden lg:flex">
-        <a class="btn btn-ghost btn-sm rounded-btn"> Home </a>
-        <a class="btn btn-ghost btn-sm rounded-btn"> Portfolio </a>
-        <a href="https://daisyui.com/" target="_blank" class="btn btn-ghost btn-sm rounded-btn"> About </a>
-        <a href="https://github.com/mkhairi/rails-daisyui-starter" target="_blank" class="btn btn-ghost btn-sm rounded-btn"> Source </a>
-      </div>
+    <div class="items-stretch hidden lg:flex">
+      <a class="btn btn-ghost btn-sm rounded-btn"> Home </a>
+      <a class="btn btn-ghost btn-sm rounded-btn"> Portfolio </a>
+      <a href="https://daisyui.com/" target="_blank" class="btn btn-ghost btn-sm rounded-btn"> About </a>
+      <a href="https://github.com/mkhairi/rails-daisyui-starter" target="_blank" class="btn btn-ghost btn-sm rounded-btn"> Source </a>
+    </div>
   </div>
   <div title="Change Theme" class="dropdown dropdown-end">
     <div tabindex="0" class="m-1 normal-case btn-ghost btn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current md:mr-2">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-        </svg>
-        <span class="hidden md:inline">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current md:mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+      </svg>
+      <span class="hidden md:inline">
         Change Theme
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" class="inline-block w-4 h-4 ml-1 fill-current">
-          <path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path>
-        </svg>
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" class="inline-block w-4 h-4 ml-1 fill-current">
+        <path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path>
+      </svg>
     </div>
-    <div class="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 rounded-b-box bg-base-200 text-base-content">
-        <ul class="p-4 menu compact" data-controller="theme">
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="light">🌝  light</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="dark">🌚  dark</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cupcake">🧁  cupcake</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="bumblebee">🐝  bumblebee</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="emerald">✳️  Emerald</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="corporate">🏢  Corporate</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="synthwave">🌃  synthwave</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="retro">👴  retro</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cyberpunk">🤖  cyberpunk</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="valentine">🌸  valentine</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="halloween">🎃  halloween</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="garden">🌷  garden</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="forest">🌲  forest</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="aqua">🐟  aqua</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="lofi">👓  lofi</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="pastel">🖍  pastel</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="fantasy">🧚‍♀️  fantasy</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="wireframe">📝  Wireframe</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="black">🏴  black</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="luxury">💎  luxury</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="dracula">🧛‍♂️  dracula</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cmyk">🖨  CMYK</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="autumn">🍁  Autum</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="business">💼  Busines</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="acid">💊  Acid</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="lemonade">🍋  Lemonade</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="night">🌙  Night</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="coffee">️☕️  Coffee</a></li>
-          <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="winter">️❄️  Winter</a></li>
-        </ul>
-
-
+    <div class="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 z-[1] rounded-b-box bg-base-200 text-base-content">
+      <ul class="p-4 menu compact" data-controller="theme">
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="light">🌝  light</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="dark">🌚  dark</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cupcake">🧁  cupcake</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="bumblebee">🐝  bumblebee</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="emerald">✳️  Emerald</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="corporate">🏢  Corporate</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="synthwave">🌃  synthwave</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="retro">👴  retro</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cyberpunk">🤖  cyberpunk</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="valentine">🌸  valentine</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="halloween">🎃  halloween</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="garden">🌷  garden</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="forest">🌲  forest</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="aqua">🐟  aqua</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="lofi">👓  lofi</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="pastel">🖍  pastel</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="fantasy">🧚‍♀️  fantasy</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="wireframe">📝  Wireframe</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="black">🏴  black</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="luxury">💎  luxury</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="dracula">🧛‍♂️  dracula</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="cmyk">🖨  CMYK</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="autumn">🍁  Autum</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="business">💼  Busines</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="acid">💊  Acid</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="lemonade">🍋  Lemonade</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="night">🌙  Night</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="coffee">️☕️  Coffee</a></li>
+        <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="winter">️❄️  Winter</a></li>
+      </ul>
     </div>
   </div>
   <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <%= icon "bell", class: 'w-6 h-6' %>
-      </button>
+    <button class="btn btn-square btn-ghost">
+      <%= icon "bell", class: 'w-6 h-6' %>
+    </button>
   </div>
   <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <%= icon "search", class: 'w-6 h-6' %>
-      </button>
+    <button class="btn btn-square btn-ghost">
+      <%= icon "search", class: 'w-6 h-6' %>
+    </button>
   </div>
 </div>
