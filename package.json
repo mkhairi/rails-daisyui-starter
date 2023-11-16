@@ -4,13 +4,12 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
-    "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.2",
-    "daisyui": "^3.5.1",
-    "esbuild": "^0.19.0",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "tinymce": "^6.6.2"
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^4.0.8",
+    "esbuild": "^0.19.5",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   },
   "scripts": {
     "build": "esbuild app/assets/javascripts/*.* --bundle --sourcemap --outdir=app/assets/builds",
