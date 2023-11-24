@@ -13,6 +13,7 @@ export default class extends Controller {
 
   switch (event) {
     this.theme = event.target.dataset.themeValue
+    console.log("switching" + this.theme)
     this.apply()
   }
 
