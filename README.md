@@ -11,6 +11,8 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 ```sh
+cd dir
+asdf install
 bundle install
 yarn install
 ./bin/dev

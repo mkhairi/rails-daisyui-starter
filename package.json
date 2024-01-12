@@ -6,10 +6,10 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
-    "daisyui": "^4.4.6",
-    "esbuild": "^0.19.5",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
+    "daisyui": "^4.6.0",
+    "esbuild": "^0.19.11",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
   },
   "scripts": {
     "build": "esbuild app/assets/javascripts/*.* --bundle --sourcemap --outdir=app/assets/builds",
