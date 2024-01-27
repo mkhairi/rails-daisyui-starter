@@ -1,0 +1,25 @@
+<h2 class="mt-8 text-2xl font-bold leading-9 tracking-tight text-primary">Sign in to your account</h2>
+<p class="mt-2 text-sm leading-6">
+  Not a member?
+  <a href="/users/sign_up" class="font-semibold text-primary hover:text-secondary">Sign up</a>
+</p>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs mt-2">
+    <%= f.input :email,
+                required: false,
+                autofocus: true,
+                label: false,
+                placeholder: "Email",
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: false,
+                label: false,
+                placeholder: "Password",
+                input_html: { autocomplete: "current-password" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Log in", class: "w-full" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>

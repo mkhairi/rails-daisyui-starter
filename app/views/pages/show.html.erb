@@ -1,0 +1,10 @@
+<%= show_for @page do |s| %>
+  <%= s.attribute :title %>
+  <%= s.attribute :content %>
+  <%= s.attribute :published %>
+  <%= s.attribute :prefrences %>
+  <%= s.attribute :status %>
+<% end %>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

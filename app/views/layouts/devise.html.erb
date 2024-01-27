@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="h-full bg-base">
+  <head>
+    <title>Daisyui</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script>
+      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
+    </script>
+  </head>
+  <body class="h-full">
+    <div class="flex min-h-full">
+      <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div class="mx-auto w-full max-w-sm lg:w-96">
+          <div title="Change Theme" class="dropdown absolute top-0 left-0">
+            <div tabindex="0" class="m-1 normal-case btn-ghost btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current md:mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" class="inline-block w-4 h-4 ml-1 fill-current">
+                <path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path>
+              </svg>
+            </div>
+            <div class="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 z-[1] rounded-b-box bg-base-200 text-base-content">
+              <ul class="p-4 menu compact" data-controller="theme">
+                <% themes.each do |theme| %>
+                  <li><a tabindex="0" data-action="click->theme#switch" data-theme-value="<%= theme %>"><%= theme.humanize %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <a href="/" aria-current="page" aria-label="Homepage" class="flex-0 btn btn-ghost px-2">
+              <svg width="32" height="32" viewBox="0 0 415 415" xmlns="http://www.w3.org/2000/svg">
+                <rect x="82.5" y="290" width="250" height="125" rx="62.5" fill="#1AD1A5"></rect>
+                <circle cx="207.5" cy="135" r="130" fill="black" fill-opacity=".3"></circle>
+                <circle cx="207.5" cy="135" r="125" fill="white"></circle><circle cx="207.5" cy="135" r="56" fill="#FF9903"></circle>
+              </svg>
+              <div class="font-title inline-flex text-lg md:text-2xl">
+                <span class="lowercase">daisy</span>
+                <span class="uppercase text-[#1AD1A5]">UI</span>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div class="relative hidden w-0 flex-1 lg:block">
+        <img class="absolute inset-0 h-full w-full object-cover" src="https://source.unsplash.com/collection/3725203" alt="">
+      </div>
+    </div>
+  </body>
+</html>
