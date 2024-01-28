@@ -5,11 +5,11 @@
 </p>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs mt-2">
-    <%= f.input :email,
+    <%= f.input :login,
                 required: false,
                 autofocus: true,
                 label: false,
-                placeholder: "Email",
+                placeholder: "Username or Email",
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: false,
