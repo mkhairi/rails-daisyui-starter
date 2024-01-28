@@ -1,90 +1,137 @@
-# syntax=docker/dockerfile:1
-# check=error=true
+# syntax = docker/dockerfile:experimental
 
-# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t daisyui .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name daisyui daisyui
+# Dockerfile used to build a deployable image for a Rails application.
+# Adjust as required.
+#
+# Common adjustments you may need to make over time:
+#  * Modify version numbers for Ruby, Bundler, and other products.
+#  * Add library packages needed at build time for your gems, node modules.
+#  * Add deployment packages needed by your application
+#  * Add (often fake) secrets needed to compile your assets
 
-# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
+#######################################################################
 
-# Make sure RUBY_VERSION matches the Ruby version in .ruby-version
+# Learn more about the chosen Ruby stack, Fullstaq Ruby, here:
+#   https://github.com/evilmartians/fullstaq-ruby-docker.
+#
+# We recommend using the highest patch level for better security and
+# performance.
+
 ARG RUBY_VERSION=4.0.1
-FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+ARG VARIANT=jemalloc-slim
+FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
-# Rails app lives here
-WORKDIR /rails
+LABEL fly_launch_runtime="rails"
 
-# Install base packages
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
-    ln -s /usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2 /usr/local/lib/libjemalloc.so && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+ARG NODE_VERSION=22.14.0
+ARG YARN_VERSION=4.7.0
+ARG BUNDLER_VERSION=2.5.19
 
-# Set production environment variables and enable jemalloc for reduced memory usage and latency.
-ENV RAILS_ENV="production" \
-    BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development" \
-    LD_PRELOAD="/usr/local/lib/libjemalloc.so"
+ARG RAILS_ENV=production
+ENV RAILS_ENV=${RAILS_ENV}
 
-# Throw-away build stage to reduce size of final image
-FROM base AS build
+ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT true
 
-# Install packages needed to build gems and node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev node-gyp pkg-config python-is-python3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+ARG BUNDLE_WITHOUT=development:test
+ARG BUNDLE_PATH=vendor/bundle
+ENV BUNDLE_PATH ${BUNDLE_PATH}
+ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
 
-# Install JavaScript dependencies
-ARG NODE_VERSION=24.13.0
-ARG YARN_VERSION=latest
-ENV PATH=/usr/local/node/bin:$PATH
-RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
-    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
-    rm -rf /tmp/node-build-master
-RUN corepack enable && yarn set version $YARN_VERSION
+RUN mkdir /app
+WORKDIR /app
+RUN mkdir -p tmp/pids
 
-# Install application gems
-COPY Gemfile Gemfile.lock vendor ./
+RUN curl https://get.volta.sh | bash
+ENV VOLTA_HOME /root/.volta
+ENV PATH $VOLTA_HOME/bin:/usr/local/bin:$PATH
+RUN volta install node@${NODE_VERSION} yarn@${YARN_VERSION} && \
+    gem update --system --no-document && \
+    gem install -N bundler -v ${BUNDLER_VERSION}
 
-RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-    # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
-    bundle exec bootsnap precompile -j 1 --gemfile
+#######################################################################
 
-# Install node modules
-COPY package.json yarn.lock ./
-RUN yarn install --immutable
+# install packages only needed at build time
 
-# Copy application code
-COPY . .
+FROM base as build_deps
 
-# Precompile bootsnap code for faster boot times.
-# -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
-RUN bundle exec bootsnap precompile -j 1 app/ lib/
+ARG BUILD_PACKAGES="git build-essential libpq-dev libyaml-dev wget vim curl gzip xz-utils libsqlite3-dev"
+ENV BUILD_PACKAGES ${BUILD_PACKAGES}
 
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN --mount=type=cache,id=dev-apt-cache,sharing=locked,target=/var/cache/apt \
+    --mount=type=cache,id=dev-apt-lib,sharing=locked,target=/var/lib/apt \
+    apt-get update -qq && \
+    apt-get install --no-install-recommends -y ${BUILD_PACKAGES} \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+#######################################################################
 
-RUN rm -rf node_modules
+# install gems
 
+FROM build_deps as gems
 
-# Final stage for app image
+COPY Gemfile* ./
+RUN bundle install && rm -rf vendor/bundle/ruby/*/cache
+
+#######################################################################
+
+# install node modules
+
+FROM build_deps as node_modules
+
+COPY package*json ./
+COPY yarn.* ./
+RUN yarn install
+
+#######################################################################
+
+# install deployment packages
+
 FROM base
 
-# Run and own only the runtime files as a non-root user for security
-RUN groupadd --system --gid 1000 rails && \
-    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
-USER 1000:1000
+ARG DEPLOY_PACKAGES="postgresql-client file vim curl gzip libsqlite3-0"
+ENV DEPLOY_PACKAGES=${DEPLOY_PACKAGES}
 
-# Copy built artifacts: gems, application
-COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
-COPY --chown=rails:rails --from=build /rails /rails
+RUN --mount=type=cache,id=prod-apt-cache,sharing=locked,target=/var/cache/apt \
+    --mount=type=cache,id=prod-apt-lib,sharing=locked,target=/var/lib/apt \
+    apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    ${DEPLOY_PACKAGES} \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-# Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+# copy installed gems
+COPY --from=gems /app /app
+COPY --from=gems /usr/lib/fullstaq-ruby/versions /usr/lib/fullstaq-ruby/versions
+COPY --from=gems /usr/local/bundle /usr/local/bundle
 
-# Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
-CMD ["./bin/thrust", "./bin/rails", "server"]
+# copy installed node modules
+COPY --from=node_modules /app/node_modules /app/node_modules
+
+#######################################################################
+
+# Deploy your application
+COPY . .
+
+# Adjust binstubs to run on Linux and set current working directory
+# Adjust binstubs to run on Linux and set current working directory
+RUN chmod +x /app/bin/* && \
+    sed -i 's/ruby.exe\r*/ruby/' /app/bin/* && \
+    sed -i 's/ruby\r*/ruby/' /app/bin/* && \
+    sed -i '/^#!/aDir.chdir File.expand_path("..", __dir__)' /app/bin/*
+
+# The following enable assets to precompile on the build server.  Adjust
+# as necessary.  If no combination works for you, see:
+# https://fly.io/docs/rails/getting-started/existing/#access-to-environment-variables-at-build-time
+ENV SECRET_KEY_BASE 1
+# ENV AWS_ACCESS_KEY_ID=1
+# ENV AWS_SECRET_ACCESS_KEY=1
+
+# Run build task defined in lib/tasks/fly.rake
+ARG BUILD_COMMAND="bin/rails fly:build"
+RUN ${BUILD_COMMAND}
+
+# Default server start instructions.  Generally Overridden by fly.toml.
+ENV PORT 3000
+ARG SERVER_COMMAND="bin/rails fly:server"
+ENV SERVER_COMMAND ${SERVER_COMMAND}
+CMD ${SERVER_COMMAND}
