@@ -1,27 +1,10 @@
-<div id="<%= dom_id page %>">
-  <p>
-    <strong>Title:</strong>
-    <%= page.title %>
-  </p>
+<div id="<%= dom_id page %>" class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title"><%= page.title %></h2>
+    <p> <%= page.content %></p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= page.content %>
-  </p>
-
-  <p>
-    <strong>Published:</strong>
-    <%= page.published %>
-  </p>
-
-  <p>
-    <strong>Prefrences:</strong>
-    <%= page.prefrences %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= page.status %>
-  </p>
-
+    <div class="card-actions justify-end">
+      <%= link_to "Show this page", page, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
