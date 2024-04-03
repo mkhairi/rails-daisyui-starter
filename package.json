@@ -11,14 +11,16 @@
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "daisyui": "^4.6.0",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.2",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
     "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "tinymce": "^7.0.0",
+    "workbox-cli": "^7.0.0"
   },
   "scripts": {
-    "build": "esbuild app/assets/javascripts/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build": "node esbuild.config.mjs",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css --minify"
   },
   "packageManager": "yarn@1.22.19"

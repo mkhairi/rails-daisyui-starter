@@ -1,8 +1,7 @@
 <div id="<%= dom_id page %>" class="card w-96 bg-base-100 shadow-xl">
   <div class="card-body">
     <h2 class="card-title"><%= page.title %></h2>
-    <p> <%= page.content %></p>
-
+    <p> <%= page.content.html_safe %></p>
     <div class="card-actions justify-end">
       <%= link_to "Show this page", page, class: "btn btn-primary" %>
     </div>

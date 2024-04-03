@@ -14,7 +14,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '>= 5.0'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails", "2.0.0"
+gem 'turbo-rails', '2.0.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
@@ -74,6 +74,7 @@ end
 
 # Addons
 gem 'devise'
+gem 'enum_help'
 gem 'responders'
 gem 'show_for'
 gem 'simple_form'
