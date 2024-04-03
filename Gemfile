@@ -75,6 +75,7 @@ end
 # Addons
 gem 'devise'
 gem 'enum_help'
+gem 'inline_svg'
 gem 'responders'
 gem 'show_for'
 gem 'simple_form'

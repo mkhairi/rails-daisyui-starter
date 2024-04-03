@@ -36,6 +36,13 @@ const config = {
           ],
           to: ['./tinymce'],
           keepStructure: true
+        },
+        {
+          from: [
+            './node_modules/heroicons/24/**/*.svg',
+          ],
+          to: ['./icons/heroicons'],
+          keepStructure: true
         }
       ]
     })
