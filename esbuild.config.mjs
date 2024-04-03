@@ -53,6 +53,6 @@ if (process.argv.includes('--watch')) {
     process.exit(1)
   })
 }
-console.log(`🚀 Build node esbuild for ${process.env.RAILS_ENV} complete!`)
+console.log(`🚀 Build node esbuild complete!`)
 console.log('📱 Inject PWA workbox...')
 exec('workbox injectManifest workbox.config.js')
