@@ -20,7 +20,7 @@ This Rails starter template is designed to kickstart your Rails project swiftly.
 ## Overview
 
 * Pre-equipped essential stuff.
-  - [Hotcombo gems](https://github.com/heartcombo)
+  - [heartcombo gems](https://github.com/heartcombo)
   - Inline Svg
   - Simple Navigation
   - Tinymce
