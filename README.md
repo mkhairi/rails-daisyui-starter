@@ -1,6 +1,6 @@
 # Summary
 <span>
-  <img src="https://raw.githubusercontent.com/saadeghi/daisyui/master/src/docs/static/images/daisyui-logo/favicon-192.png" alt="" style="max-width: 100%;" width="100" height="100">
+  <img src="https://raw.githubusercontent.com/saadeghi/daisyui-images/master/images/daisyui-logo/favicon-192.png" alt="" style="max-width: 100%;" width="100" height="100">
 </span>
 <span>
   <img itemprop="image" class="avatar" src="https://avatars.githubusercontent.com/u/4223?s=200&amp;v=4" width="100" height="100" alt="@rails" style="max-width: 100%;">

@@ -51,7 +51,19 @@
         </div>
       </div>
       <div class="relative hidden w-0 flex-1 lg:block">
-        <img class="absolute inset-0 h-full w-full object-cover" src="https://source.unsplash.com/collection/3725203" alt="">
+        <%random_bg = [
+          "https://images.unsplash.com/photo-1656696701010-1b4b17fabd43",
+          "https://images.unsplash.com/photo-1668686201559-86e08d59c19d",
+          "https://images.unsplash.com/photo-1624396593470-a4a06f5d1947",
+          "https://images.unsplash.com/photo-1508784411316-02b8cd4d3a3a",
+          "https://images.unsplash.com/photo-1522868082931-1b5b29f09ccd",
+          "https://images.unsplash.com/photo-1528525953106-e218520108b0",
+          "https://images.unsplash.com/photo-1533605130256-1b7ace3b3905",
+          "https://images.unsplash.com/photo-1432316212565-b26e2a381ada",
+          "https://images.unsplash.com/photo-1433208406127-d9e1a0a1f1aa"
+          ]
+        %>
+        <img class="absolute inset-0 h-full w-full object-cover" src="<%=random_bg.sample%>" alt="">
       </div>
     </div>
   </body>
