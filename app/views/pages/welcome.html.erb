@@ -27,7 +27,7 @@
   <div class="flex grow flex-col gap-6">
     <div class="navbar bg-base-200 rounded-box hidden motion-reduce:!opacity-100 xl:flex" style="opacity:1">
       <div class="grow"><button tabindex="-1" class="btn btn-ghost btn-circle avatar" aria-label="tailwindcss avatar">
-          <div class="w-10 rounded-full"><img width="40" height="40" src="https://i.pravatar.cc/500?img=<%=(1..70).to_a.sample%>" alt="Tailwind button" aria-label="Tailwind CSS button"></div>
+          <div class="w-10 rounded-full"><img width="40" height="40" src="<%= avatar_url %>" alt="Tailwind button" aria-label="Tailwind CSS button"></div>
         </button></div>
       <ul class="menu menu-sm menu-horizontal rounded-box">
         <li><button tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
@@ -179,7 +179,7 @@
     <div class="flex-row items-center space-x-4 card-body">
       <div>
         <div class="avatar">
-          <div class="rounded-full w-14 h-14 shadow"><img src="https://i.pravatar.cc/500?img=32"></div>
+          <div class="rounded-full w-14 h-14 shadow"><img src="<%= avatar_url %>"></div>
         </div>
       </div>
       <div>
@@ -250,34 +250,34 @@
       <div class="justify-end space-x-2 card-actions"><button class="btn btn-primary">Login</button> <button class="btn">Register</button></div>
       <div class="flex items-center space-x-8 flex-wrap">
         <div class="avatar">
-          <div class="mb-8 w-24 h-24 mask mask-squircle"><img src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"></div>
+          <div class="mb-8 w-24 h-24 mask mask-squircle"><img src="<%= avatar_url %>"></div>
         </div>
         <div class="avatar">
-          <div class="mb-8 w-24 h-24 mask mask-hexagon"><img src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"></div>
+          <div class="mb-8 w-24 h-24 mask mask-hexagon"><img src="<%= avatar_url %>"></div>
         </div>
         <div class="avatar">
-          <div class="mb-8 w-24 h-24 mask mask-decagon"><img src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"></div>
+          <div class="mb-8 w-24 h-24 mask mask-decagon"><img src="<%= avatar_url %>"></div>
         </div>
       </div>
       <div class="avatar-group -space-x-5">
         <div class="avatar">
           <div class="w-10 h-10">
-            <img src="http://daisyui.com/tailwind-css-component-profile-1@40w.png">
+            <img src="<%= avatar_url %>">
           </div>
         </div>
         <div class="avatar">
           <div class="w-10 h-10">
-            <img src="http://daisyui.com/tailwind-css-component-profile-2@40w.png">
+            <img src="<%= avatar_url %>">
           </div>
         </div>
         <div class="avatar">
           <div class="w-10 h-10">
-            <img src="http://daisyui.com/tailwind-css-component-profile-3@40w.png">
+            <img src="<%= avatar_url %>">
           </div>
         </div>
         <div class="avatar">
           <div class="w-10 h-10">
-            <img src="http://daisyui.com/tailwind-css-component-profile-5@40w.png">
+            <img src="<%= avatar_url %>">
           </div>
         </div>
         <div class="avatar placeholder">
