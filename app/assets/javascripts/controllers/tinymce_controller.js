@@ -6,6 +6,7 @@ export default class extends Controller {
 
   initialize() {
     this.defaults = {
+      license_key: 'gpl', // Your license key
       base_url: '/assets/tinymce',
       plugins:
         'preview importcss autolink autosave save directionality code visualblocks visualchars fullscreen image link media table charmap pagebreak nonbreaking anchor advlist lists help charmap quickbars',
