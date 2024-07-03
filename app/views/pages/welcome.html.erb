@@ -1,4 +1,4 @@
-<div class="border-base-200 flex w-full items-stretch justify-center gap-6 p-6 rounded-2xl border xl:h-[40rem] xl:justify-normal" style="--tw-border-opacity:1">
+<div class="flex w-full items-stretch justify-center gap-6 p-6 rounded-2xl xl:justify-normal">
   <div class="hidden flex-col gap-6 xl:flex">
     <div class="flex gap-6">
       <div class="rounded-box bg-base-200 h-full motion-reduce:!opacity-100" style="opacity:1">
@@ -43,11 +43,19 @@
       <div class="h-4"></div>
       <p class="text-base-content/60 mx-auto max-w-lg font-sans text-sm font-light">daisyUI adds a set of customizable color names to Tailwind CSS and these new colors use CSS variables for the values. Using daisyUI color names, you get Dark Mode and even more themes without adding a new class name.</p>
       <div class="h-4"></div>
-      <div><a class="btn btn-wide btn-primary" data-sveltekit-preload-data="" href="https://daisyui.com/docs/themes/" tabindex="-1">See all themes</a></div>
+      <div><a class="btn btn-wide btn-primary" data-sveltekit-preload-data="" href="/static/themes" tabindex="-1">See all themes</a></div>
     </div>
     <div class="card bg-base-200 hidden motion-reduce:!opacity-100 xl:flex" style="opacity:1">
       <div class="card-body">
-        <div class="flex h-full items-center justify-between gap-6"><input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-primary pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-secondary pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-accent pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-primary pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-secondary pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-accent pointer-events-none"></div>
+        <div class="flex h-full items-center justify-between gap-6">
+          <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-primary pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-secondary pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss toggle" checked="" type="checkbox" name="sample-checkbox" class="toggle toggle-accent pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-primary pointer-events-none">
+          <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-secondary pointer-events-none"> <input tabindex="-1" aria-label="tailwindcss checkbox" checked="" type="checkbox" name="sample-checkbox" class="checkbox checkbox-accent pointer-events-none">
+        </div>
       </div>
     </div>
   </div>
@@ -370,6 +378,31 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
       </svg>
       <label>Lorem ipsum dolor sit amet, consectetur adip!</label>
+    </div>
+  </div>
+  <div class="rounded-box bg-base-100 card h-full shrink-0 motion-reduce:!opacity-100 xl:flex" style="opacity:1">
+    <div class="card-body">
+      <div class="flex gap-6 xl:flex-col xl:gap-0">
+        <div class="form-control"><label class="label cursor-pointer"><span class="label-text text-xs">Faster development</span> <input type="checkbox" class="toggle toggle-sm toggle-primary" name="toggle" checked="checked"></label></div>
+        <div class="form-control"><label class="label cursor-pointer"><span class="label-text text-xs">Cleaner HTML</span> <input type="checkbox" class="toggle toggle-sm toggle-secondary" name="toggle" checked="checked"></label></div>
+        <div class="form-control"><label class="label cursor-pointer"><span class="label-text text-xs">Customizable</span> <input type="checkbox" class="toggle toggle-sm toggle-accent" name="toggle" checked="checked"></label></div>
+        <div class="form-control"><label class="label cursor-pointer"><span class="label-text text-xs">Themeable</span> <input type="checkbox" class="toggle toggle-sm toggle-success" name="toggle" checked="checked"></label></div>
+        <div class="form-control"><label class="label cursor-pointer"><span class="label-text text-xs">Pure CSS</span> <input type="checkbox" class="toggle toggle-sm" name="toggle" checked="checked"></label></div>
+        <h2 class="card-title mb-4 text-sm">Design system</h2>
+        <div class="grid grid-cols-4 items-end gap-4"><label class="flex cursor-pointer flex-col items-center gap-1"><input name="checkbox" type="checkbox" class="checkbox checkbox-xs" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">checkbox-xs</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="checkbox" type="checkbox" class="checkbox checkbox-sm" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">checkbox-sm</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="checkbox" type="checkbox" class="checkbox checkbox-md" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">checkbox-md</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="checkbox" type="checkbox" class="checkbox checkbox-lg" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">checkbox-lg</span></label></div>
+        <div class="grid grid-cols-4 items-end gap-4"><label class="flex cursor-pointer flex-col items-center gap-1"><input name="radio" type="radio" class="radio radio-xs" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">radio-xs</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="radio" type="radio" class="radio radio-sm" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">radio-sm</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="radio" type="radio" class="radio radio-md" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">radio-md</span></label> <label class="flex cursor-pointer flex-col items-center gap-1"><input name="radio" type="radio" class="radio radio-lg" tabindex="-1"> <span class="text-base-content/70 text-[.6rem]">radio-lg</span></label></div>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-box bg-base-100 card  h-full " style="opacity:1">
+    <div class="card-body">
+      <div class="flex flex-wrap gap-2">
+        <div class="radial-progress" style="--value:0;" role="progressbar">0%</div>
+        <div class="radial-progress" style="--value:20;" role="progressbar">20%</div>
+        <div class="radial-progress" style="--value:60;" role="progressbar">60%</div>
+        <div class="radial-progress" style="--value:80;" role="progressbar">80%</div>
+        <div class="radial-progress" style="--value:100;" role="progressbar">100%</div>
+      </div>
     </div>
   </div>
 </div>

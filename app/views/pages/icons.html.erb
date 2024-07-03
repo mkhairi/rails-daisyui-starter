@@ -1,16 +1,14 @@
-<div class="container mx-auto mt-4">
-  <div class=" prose prose-sm md:prose-base mb-3">
-    <h1>Icons Helper</h1>
-    <h5>  Embed svg icons in your Rails app with ease. </h5>
-    <code>  <%%= icon :hero_icon_name %>  </code>
-  </div>
-  <div class="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-x-6 gap-y-4 pb-16 pt-10 sm:pt-11 md:pt-12">
-    <% icons = Dir[icons_path.join('*.svg')]%>
-    <% icons.sample(100).each do |icon| %>
-      <% icon_name = icon.split('/').last.split('.').first %>
-      <div class="relative h-[8.5rem]">
-        <div class="icon-preview-icon tooltip" data-tip="<%=icon_name%>"><%= icon(icon_name) %></div>
-      </div>
-    <%end%>
-  </div>
+<div class=" prose prose-sm md:prose-base mb-3">
+  <h1>Icons Helper</h1>
+  <h5>  Embed svg icons in your Rails app with ease. </h5>
+  <code>  <%%= icon :hero_icon_name %>  </code>
+</div>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-x-6 gap-y-4 pb-16 pt-10 sm:pt-11 md:pt-12">
+  <% icons = Dir[icons_path.join('*.svg')]%>
+  <% icons.sample(100).each do |icon| %>
+    <% icon_name = icon.split('/').last.split('.').first %>
+    <div class="relative h-[8.5rem]">
+      <div class="icon-preview-icon tooltip" data-tip="<%=icon_name%>"><%= icon(icon_name) %></div>
+    </div>
+  <%end%>
 </div>

@@ -1,19 +1,17 @@
-<div class="container mx-auto mt-4">
-  <p style="color: green"><%= notice %></p>
-  <div class="flex">
-    <div class="grow prose prose-sm md:prose-base">
-      <h1>Pages</h1>
-      <p> Example of a simple Rails app with a Pages resource with simple form</p>
-    </div>
+<p style="color: green"><%= notice %></p>
+<div class="flex">
+  <div class="grow prose prose-sm md:prose-base">
+    <h1>Pages</h1>
+    <p> Example of a simple Rails app with a Pages resource with simple form</p>
   </div>
-  <div id="pages" class="mt-4 grid grid-cols-4 gap-16 grid-flow-row">
-    <% @pages.each do |page| %>
-      <%= render page %>
-    <% end %>
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <div class="card-body justify-center align-middle">
-        <%= link_to 'New Page', new_page_path, class: "btn btn-primary w-60 mx-auto" %>
-      </div>
+</div>
+<div id="pages" class="mt-4 grid grid-cols-4 gap-16 grid-flow-row">
+  <% @pages.each do |page| %>
+    <%= render page %>
+  <% end %>
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body justify-center align-middle">
+      <%= link_to 'New Page', new_page_path, class: "btn btn-primary w-60 mx-auto" %>
     </div>
   </div>
 </div>

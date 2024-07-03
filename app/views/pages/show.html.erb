@@ -1,16 +1,14 @@
-<div class="container mx-auto mt-4">
-  <div class=" prose prose-sm md:prose-base mb-3">
-    <h1>Show Page</h1>
-  </div>
-  <%= show_for @page do |s| %>
-    <%= s.attribute :title %>
-    <%= s.attribute :content do %>
-      <%= s.object.content.html_safe %>
-    <%end%>
-    <%= s.attribute :published %>
-    <%= s.attribute :prefrences %>
-  <% end %>
-  <%= link_to 'Edit', edit_page_path(@page), class: "btn btn-warning" %> |
-  <%= link_to 'Back', pages_path, class: "btn btn-primary" %>
+<div class=" prose prose-sm md:prose-base mb-3">
+  <h1>Show Page</h1>
 </div>
+<%= show_for @page do |s| %>
+  <%= s.attribute :title %>
+  <%= s.attribute :content do %>
+    <%= s.object.content.html_safe %>
+  <%end%>
+  <%= s.attribute :published %>
+  <%= s.attribute :prefrences %>
+<% end %>
+<%= link_to 'Edit', edit_page_path(@page), class: "btn btn-warning" %> |
+<%= link_to 'Back', pages_path, class: "btn btn-primary" %>
 </div>

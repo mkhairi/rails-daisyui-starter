@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: %i[show edit update destroy]
+  before_action :set_page, only: %i[edit update destroy]
 
   def index
     @pages = Page.all
@@ -7,11 +7,10 @@ class PagesController < ApplicationController
   end
 
   def show
+    @page = Page.find(params[:id])
     respond_with(@page)
-  end
-
-  def static
-    render params[:page]
+  rescue ActiveRecord::RecordNotFound
+    render params[:id]
   end
 
   def new

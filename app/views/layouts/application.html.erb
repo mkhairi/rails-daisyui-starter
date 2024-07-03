@@ -14,12 +14,15 @@
   <body>
     <div class="drawer">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
+      <div class="drawer-content h-screen">
         <!-- Page content here -->
         <%= render "layouts/header" %>
-        <%= yield %>
+        <div class="<%= container_class %> mx-auto mt-4">
+          <%= yield %>
+        </div>
+        <%= render "layouts/footer" %>
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side z-40">
         <label for="my-drawer" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
           <!-- Sidebar content here -->
