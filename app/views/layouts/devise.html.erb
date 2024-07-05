@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full bg-base" lang="en">
   <head>
-    <title>Daisyui</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <script>
-      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
-    </script>
+    <%= render "layouts/head" %>
   </head>
   <body class="h-full drawer drawer-end">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -81,5 +73,6 @@
         <% end %>
       </ul>
     </div>
+    <%= render "layouts/analytics" %>
   </body>
 </html>

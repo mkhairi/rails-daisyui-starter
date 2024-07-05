@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Daisyui</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <script>
-      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
-    </script>
+    <%= render "layouts/head" %>
   </head>
   <body>
     <div class="drawer">
@@ -31,5 +23,6 @@
         </ul>
       </div>
     </div>
+    <%= render "layouts/analytics" %>
   </body>
 </html>

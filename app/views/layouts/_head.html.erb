@@ -1,0 +1,14 @@
+<title>Daisyui on Rails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=2, user-scalable=1, shrink-to-fit=no">
+<meta name="description" content="DaisyUI on Rails, a Rails starter template is designed to kickstart your Rails with daisyui project swiftly.">
+<meta name="keywords" content="DaisyUI, Rails, TailwindCSS, Template, Bootstrap, Jumpstart, Kickstart, Stater">
+<meta name="author" content="khairi.my">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= action_cable_meta_tag%>
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+<script>
+  document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
+</script>
+<%= yield :head %>

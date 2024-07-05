@@ -7,7 +7,7 @@
 </span>
 
 Kickstart your Rails app with [daisyui](https://daisyui.com/) The most popular, free and open-source component library for Tailwind CSS.
-[See in live Demo](https://daisyui.fly.dev/)
+[See in live Demo](https://daisyui.labs.my/)
 
 Current Main Branch: rails 7 + esbuild
 
@@ -15,7 +15,7 @@ Rails 6 + webpacker: https://github.com/mkhairi/rails-daisyui-starter/tree/rails
 
 ## Goals
 
-This Rails starter template is designed to kickstart your Rails project swiftly. It comes with some magic spells and is supposedly beginner-friendly. Keeping it as simple as it should be.
+This Rails daisyui starter template is designed to kickstart your Rails project with daisyui swiftly. It comes with some magic spells and is supposedly beginner-friendly. Keeping it as simple as it should be.
 
 ## Overview
 
@@ -24,6 +24,7 @@ This Rails starter template is designed to kickstart your Rails project swiftly.
   - Inline Svg
   - Simple Navigation
   - Tinymce
+  - ....
 
 ## Setup
 
