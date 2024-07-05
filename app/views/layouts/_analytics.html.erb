@@ -1,14 +1,13 @@
 <% if ENV["ANALYTICS_PROVIDER_ID"].present? %>
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV["ANALYTICS_PROVIDER_ID"] %>"></script>
   <script>
-    // https://github.com/turbolinks/turbolinks/issues/73
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
 
     gtag("config", "<%= ENV["ANALYTICS_PROVIDER_ID"] %>");
 
-    document.addEventListener('turbolinks:load', function(event) {
+    document.addEventListener('turbo:load', function(event) {
       if (typeof(gtag) == 'function') {
         gtag('config', '<%= ENV["ANALYTICS_PROVIDER_ID"] %>', {
           'page_title' : event.target.title,
