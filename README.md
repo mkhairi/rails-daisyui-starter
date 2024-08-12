@@ -9,7 +9,7 @@
 Kickstart your Rails app with [daisyui](https://daisyui.com/) The most popular, free and open-source component library for Tailwind CSS.
 [See in live Demo](https://daisyui.labs.my/)
 
-Current Main Branch: rails 7 + esbuild
+Current Main Branch: Rails 7.2 + esbuild
 
 Rails 6 + webpacker: https://github.com/mkhairi/rails-daisyui-starter/tree/rails6
 
