@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     respond_with(@page)
   rescue ActiveRecord::RecordNotFound
-    render params[:id]
+    render static_page
   end
 
   def new
@@ -44,5 +44,10 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:title, :content, :published, :prefrences, :status)
+  end
+
+  def static_page
+    # only allow certain pages to be rendered
+    %w[about themes welcome icons].include?(params[:id]) ? params[:id] : "welcome"
   end
 end
