@@ -5,6 +5,6 @@ class UsernameValidator < ActiveModel::EachValidator
     return if value =~ VALID_NAME_REGEX
 
     record.errors.add attribute,
-                      (options[:message] || 'should only contain letters, numbers, underscore, hyphen')
+                      (options[:message] || "should only contain letters, numbers, underscore, hyphen")
   end
 end

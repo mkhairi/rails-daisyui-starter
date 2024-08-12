@@ -1,9 +1,9 @@
 module ApplicationHelper
   def container_class
-    if controller_name == 'pages' && action_name == 'welcome'
-      'container-full'
+    if controller_name == "pages" && action_name == "welcome"
+      "container-full"
     else
-      'container'
+      "container"
     end
   end
 

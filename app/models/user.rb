@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         authentication_keys: [:login]
+         authentication_keys: [ :login ]
 
   validates :username, presence: true, length: { maximum: 20 }, username: true, uniqueness: true
 
@@ -15,7 +15,7 @@ class User < ApplicationRecord
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       # when allowing distinct User records with, e.g., "username" and "UserName"...
-      where(conditions).where(['username = :value OR lower(email) = :value', { value: login }]).first
+      where(conditions).where([ "username = :value OR lower(email) = :value", { value: login } ]).first
     else
       where(conditions).first
     end
