@@ -1,4 +1,4 @@
-<title>Daisyui on Rails</title>
+<title><%= content_for(:title) || "Daisyui on Rails" %> </title>
 <meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=2, user-scalable=1, shrink-to-fit=no">
 <meta name="description" content="DaisyUI on Rails, a Rails starter template is designed to kickstart your Rails with daisyui project swiftly.">
 <meta name="keywords" content="DaisyUI, Rails, TailwindCSS, Template, Bootstrap, Jumpstart, Kickstart, Stater">
@@ -8,7 +8,11 @@
 <%= action_cable_meta_tag%>
 <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+<%= yield :head %>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.png">
 <script>
   document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
 </script>
-<%= yield :head %>
