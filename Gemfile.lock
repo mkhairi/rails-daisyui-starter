@@ -136,7 +136,7 @@ GEM
       railties (>= 6.0.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    logger (1.6.0)
+    logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -177,7 +177,7 @@ GEM
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
-    prism (0.30.0)
+    prism (1.0.0)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -223,7 +223,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rbs (3.5.2)
+    rbs (3.5.3)
       logger
     rdoc (6.7.0)
       psych (>= 4.0.0)
@@ -269,12 +269,12 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    ruby-lsp (0.17.12)
+    ruby-lsp (0.17.17)
       language_server-protocol (~> 3.17.0)
-      prism (>= 0.29.0, < 0.31)
+      prism (~> 1.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
-    ruby-lsp-rails (0.3.12)
+    ruby-lsp-rails (0.3.14)
       ruby-lsp (>= 0.17.12, < 0.18.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
@@ -293,7 +293,7 @@ GEM
     simple_form (5.3.1)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    sorbet-runtime (0.5.11518)
+    sorbet-runtime (0.5.11558)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
