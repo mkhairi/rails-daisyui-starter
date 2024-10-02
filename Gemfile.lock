@@ -367,7 +367,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   puma (>= 5.0)
-  rails (~> 7.2.0)
+  rails (~> 7.2.1)
   redis (>= 4.0.1)
   responders
   rubocop-rails-omakase
