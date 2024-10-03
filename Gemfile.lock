@@ -177,7 +177,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
-    prism (1.0.0)
+    prism (1.1.0)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -223,7 +223,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rbs (3.6.0)
+    rbs (3.6.1)
       logger
     rdoc (6.7.0)
       psych (>= 4.0.0)
@@ -267,13 +267,13 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    ruby-lsp (0.18.4)
+    ruby-lsp (0.19.0)
       language_server-protocol (~> 3.17.0)
-      prism (~> 1.0)
+      prism (>= 1.1, < 2.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
-    ruby-lsp-rails (0.3.16)
-      ruby-lsp (>= 0.18.0, < 0.19.0)
+    ruby-lsp-rails (0.3.17)
+      ruby-lsp (>= 0.19.0, < 0.20.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     securerandom (0.3.1)
@@ -291,7 +291,7 @@ GEM
     simple_form (5.3.1)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    sorbet-runtime (0.5.11589)
+    sorbet-runtime (0.5.11592)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
