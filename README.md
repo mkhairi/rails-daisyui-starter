@@ -13,6 +13,7 @@ Kickstart your Rails app with [daisyui](https://daisyui.com/) The most popular, 
 Current Main Branch: Rails 8.0 + esbuild
 
 Rails 7.2 + esbuild: https://github.com/mkhairi/rails-daisyui-starter/tree/rails7
+
 Rails 6 + webpacker: https://github.com/mkhairi/rails-daisyui-starter/tree/rails6
 
 ## Goals
