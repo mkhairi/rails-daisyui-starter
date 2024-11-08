@@ -1,6 +1,6 @@
 class Page < ApplicationRecord
   # Attributes
-  enum status: { draft: 0, issued: 1, archived: 99 }
+  enum :status, { draft: 0, issued: 1, archived: 99 }
 
   # Associations
 
