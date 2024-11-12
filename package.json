@@ -23,8 +23,8 @@
     "esbuild": "^0.24.0",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
-    "workbox-cli": "^7.0.0",
-    "postcss": "^8.4.33"
+    "postcss": "^8.4.33",
+    "workbox-cli": "^7.0.0"
   },
   "packageManager": "yarn@1.22.19"
 }
