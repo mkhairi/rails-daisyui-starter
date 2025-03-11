@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "tailwindcss-displaymodes";
+@plugin 'tailwind-scrollbar';
+@plugin "daisyui" {
+  themes: all;
+}

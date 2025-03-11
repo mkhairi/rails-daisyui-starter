@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   mode: 'jit',
   content: [
     './app/views/**/*.{slim,erb,jbuilder,turbo_stream,js}',
@@ -10,13 +10,7 @@ module.exports = {
     './lib/components/**/*.rb'
   ],
   safelist: [
-    {
-      pattern: /bg-(red|green|blue|orange)-(100|200|400)/
-    },
-    {
-      pattern: /text-(red|green|blue|orange)-(100|200|400)/
-    },
-    'pagy-*'
+    'badge-*',
   ],
   variants: {
     extend: {
@@ -31,41 +25,7 @@ module.exports = {
       square: 'square'
     }
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
-  daisyui: {
-    themes: [
-      'light',
-      'dark',
-      'cupcake',
-      'bumblebee',
-      'emerald',
-      'corporate',
-      'synthwave',
-      'retro',
-      'cyberpunk',
-      'valentine',
-      'halloween',
-      'garden',
-      'forest',
-      'aqua',
-      'lofi',
-      'pastel',
-      'fantasy',
-      'wireframe',
-      'black',
-      'luxury',
-      'dracula',
-      'cmyk',
-      'autumn',
-      'business',
-      'acid',
-      'lemonade',
-      'night',
-      'coffee',
-      'winter',
-      'dim',
-      'nord',
-      'sunset'
-    ]
+  plugins: {
+    '@tailwindcss/postcss': {},
   }
 }
