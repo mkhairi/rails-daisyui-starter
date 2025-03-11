@@ -104,9 +104,6 @@ COPY --from=gems /app /app
 COPY --from=gems /usr/lib/fullstaq-ruby/versions /usr/lib/fullstaq-ruby/versions
 COPY --from=gems /usr/local/bundle /usr/local/bundle
 
-# copy installed node modules
-COPY --from=node_modules /app/node_modules /app/node_modules
-
 #######################################################################
 
 # Deploy your application
