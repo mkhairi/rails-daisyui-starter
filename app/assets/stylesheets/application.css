@@ -6,3 +6,7 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+.scrollbar-rounded {
+  @apply scrollbar-thin scrollbar-thumb-primary hover:scrollbar-thumb-primary active:scrollbar-thumb-primary scrollbar-track-base-200
+}
