@@ -1472,19 +1472,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^8.0.100":
-  version: 8.0.100
-  resolution: "@rails/actioncable@npm:8.0.100"
-  checksum: 10c0/ae8870083e5c48448bd1d77268d28a16d7eee6d213dac8a6e20888c47d89ac959c4e835a613beaaa71b13b9aaaea14c4fb6d67120f972d174f1f899dd5a37e45
+"@rails/actioncable@npm:^8.0.200":
+  version: 8.0.200
+  resolution: "@rails/actioncable@npm:8.0.200"
+  checksum: 10c0/42c861f3b43131ab523d37125e30e802bd5bab98bf8150a780531f82f05177cd0071a75a7f1341eac9de772732625194ac16205a40b82dc567cc05c21c56e412
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:^8.0.100":
-  version: 8.0.100
-  resolution: "@rails/activestorage@npm:8.0.100"
+"@rails/activestorage@npm:^8.0.200":
+  version: 8.0.200
+  resolution: "@rails/activestorage@npm:8.0.200"
   dependencies:
     spark-md5: "npm:^3.0.1"
-  checksum: 10c0/db8692bbdd41d81b7268c8563b35bb6938e45b29cab1b83f967bad2e344342e8dfa295beaf2cc7dfea0e5774e43911ef50027b917961d33e50bd36de68eb66f9
+  checksum: 10c0/c5acd3f8affc9a85bd25bcee29573109063b5b7787a21a768e7e8482d40d8593a69b4cae948ade31ad5fb15bbda5c8d3073152efe629c9d4b31dd3e8c74b1a55
   languageName: node
   linkType: hard
 
@@ -1813,22 +1813,22 @@ __metadata:
   dependencies:
     "@hotwired/stimulus": "npm:^3.2.2"
     "@hotwired/turbo-rails": "npm:^8.0.13"
-    "@rails/actioncable": "npm:^8.0.100"
-    "@rails/activestorage": "npm:^8.0.100"
+    "@rails/actioncable": "npm:^8.0.200"
+    "@rails/activestorage": "npm:^8.0.200"
     "@rails/request.js": "npm:^0.0.11"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/typography": "npm:^0.5.16"
     autoprefixer: "npm:^10.4.21"
-    daisyui: "npm:^5.0.0"
+    daisyui: "npm:^5.0.6"
     esbuild: "npm:^0.25.1"
     esbuild-plugin-copy: "npm:^2.1.1"
     esbuild-rails: "npm:^1.0.7"
     heroicons: "npm:^2.2.0"
     postcss: "npm:^8.5.3"
     tailwind-scrollbar: "npm:^4.0.1"
-    tailwindcss: "npm:^4.0.12"
+    tailwindcss: "npm:^4.0.14"
     tailwindcss-displaymodes: "npm:^1.0.8"
-    tinymce: "npm:^7.7.1"
+    tinymce: "npm:^7.7.2"
     workbox-cli: "npm:^7.3.0"
   languageName: unknown
   linkType: soft
@@ -2358,10 +2358,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "daisyui@npm:5.0.0"
-  checksum: 10c0/54251dbb768a92b6f476514f0ff728dd58fe854cb4ab5bab7f30e6e76dd3d8d8632fe5ffdb9c22aa31d71329188b9648e475090c3d61801f8eab365dc3a831b7
+"daisyui@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "daisyui@npm:5.0.6"
+  checksum: 10c0/37b0f2d46b46a1aa76a771d23f35468302b5b11dc01a4d2dc1e5e0dc8ccc2bcd35c6d293aed6147a376c2bf550dba4bb8cee0a15ebde292ab643ff6b47d4f146
   languageName: node
   linkType: hard
 
@@ -5445,10 +5445,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^4.0.12":
-  version: 4.0.12
-  resolution: "tailwindcss@npm:4.0.12"
-  checksum: 10c0/186e94e49b97e974daf999c350bfc50e727039f22c44baf9144b987b6c9b754bc983e8c9ef5b99a3ca2d399115eb7811967f66cf9e88edc08ac729746d80dc56
+"tailwindcss@npm:^4.0.14":
+  version: 4.0.14
+  resolution: "tailwindcss@npm:4.0.14"
+  checksum: 10c0/6c04d1f68dc8382e974bb8704c4140dbff12cf1623e826b37a35726629402448c311ae6f5d70a3b490526ac427068430d5ddec48368f49e01799c4aa9c4159f9
   languageName: node
   linkType: hard
 
@@ -5513,10 +5513,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinymce@npm:^7.7.1":
-  version: 7.7.1
-  resolution: "tinymce@npm:7.7.1"
-  checksum: 10c0/64e6ed387e0b24708c02ca1e368a6b3ac574d457634883aa72bdf36e9e24b8f49d325face6e3af3af8853e038af38f261f174a4123cd02da46a43c9a6e5b5465
+"tinymce@npm:^7.7.2":
+  version: 7.7.2
+  resolution: "tinymce@npm:7.7.2"
+  checksum: 10c0/7191cd382aaaa54c90bf1baff754380569c3ba3420cf40542d72ac9557b12e43d270b40205b906b478ff07e78d3c5ba123a451b040fd8b5975a76c1254f69fa5
   languageName: node
   linkType: hard
 
