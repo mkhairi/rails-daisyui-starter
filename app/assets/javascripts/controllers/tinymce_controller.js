@@ -17,9 +17,20 @@ export default class extends Controller {
       images_upload_url: '/image_uploader/image',
       file_picker_types: 'file image media',
       suffix: '.min',
-      relative_urls: false
+      relative_urls: false,
       //skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
       //content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default')
+      setup: (editor) => {
+        editor.on('init', () => {
+          // Set the initial background color root variable
+          // get document --color-base-100
+          const root = document.documentElement
+          const background = getComputedStyle(root).getPropertyValue('--color-base-100')
+          const color = getComputedStyle(root).getPropertyValue('--color-base-content')
+          editor.getDoc().body.style.backgroundColor = background
+          editor.getDoc().body.style.color = color
+        })
+      }
     }
   }
 
