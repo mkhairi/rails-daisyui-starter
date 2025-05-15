@@ -12,16 +12,16 @@
     "daisyui": "^5.0.35",
     "heroicons": "^2.2.0",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.5",
+    "tailwindcss": "^4.1.6",
     "tailwindcss-displaymodes": "^1.0.8",
-    "tinymce": "^7.8.0"
+    "tinymce": "^7.9.0"
   },
   "scripts": {
     "build": "node esbuild.config.mjs",
     "build:css": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.5",
+    "@tailwindcss/cli": "^4.1.6",
     "esbuild": "^0.25.4",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
