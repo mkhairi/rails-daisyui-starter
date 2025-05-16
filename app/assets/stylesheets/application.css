@@ -7,6 +7,11 @@
   themes: all;
 }
 
+@source "../../../public/*.html";
+@source "../../../app/helpers/**/*.rb";
+@source "../../../app/javascript/**/*.js";
+@source "../../../app/views/**/*.{html,html.erb,erb,haml,slim}";
+
 /* Scrollbar css */
 
 .scrollbar-rounded {
