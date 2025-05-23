@@ -11,14 +11,14 @@ const entryPoints = [
   'service-worker.js'
 ]
 const watchDirectories = [
-  './app/assets/javascripts/**/*.js',
+  './app/javascript/**/*.js',
   './app/views/**/*.html.erb',
   './app/views/**/*.turbo_stream.erb',
   './app/assets/builds/**/*.css'
 ]
 
 const config = {
-  absWorkingDir: path.join(process.cwd(), 'app/assets/javascripts'),
+  absWorkingDir: path.join(process.cwd(), 'app/javascript'),
   outdir: 'builds',
   bundle: true,
   entryPoints: entryPoints,
