@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@config "../../../tailwind.config.js";
+
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/aspect-ratio";
 @plugin "tailwindcss-displaymodes";
