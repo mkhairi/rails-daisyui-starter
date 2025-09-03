@@ -7,69 +7,18 @@
   themes: all;
 }
 
+/* Source files */
 @source "../../../public/*.html";
 @source "../../../app/helpers/**/*.rb";
 @source "../../../app/javascript/**/*.js";
 @source "../../../app/views/**/*.{html,html.erb,erb,haml,slim}";
 
 /* Scrollbar css */
-
 .scrollbar-rounded {
-  @apply scrollbar-thin scrollbar-thumb-primary hover:scrollbar-thumb-primary active:scrollbar-thumb-primary scrollbar-track-base-200
+  @apply scrollbar-thin scrollbar-thumb-primary;
+  @apply hover:scrollbar-thumb-primary active:scrollbar-thumb-primary;
+  @apply scrollbar-track-base-200;
 }
 
-/* Start Tiny MCE Editor Override css */
-
-.tox {
-  color: var(--color-base-content) !important;
-}
-
-.tox-tinymce {
-  border: var(--border) solid #0000 !important;
-  border-color: color-mix(in oklab, var(--color-base-content) 20%, #0000) !important;
-}
-
-.tox .tox-edit-area__iframe,
-.tox:not(.tox-tinymce-inline) .tox-editor-header,
-.tox .tox-toolbar__primary,
-.tox .tox-toolbar-overlord {
-  background-color: var(--color-base-100)  !important;
-  color: var(--color-base-content) !important;
-}
-
-.tox .tox-menubar {
-  background: repeating-linear-gradient(transparent 0 1px, transparent 1px 39px) center top 39px / 100% calc(100% - 39px) no-repeat;
-  background-color: var(--color-base-100)  !important;
-}
-
-.tox :not(svg):not(rect) {
-  color: var(--color-base-content) !important;
-}
-
-.tox .tox-statusbar {
-  background-color: var(--color-base-100) !important;
-  border-top: 1px solid var(--color-base-100) !important;
-}
-
-.tox-promotion {
-  display: none !important;
-}
-
-.tox .tox-mbtn, .tox-tbtn {
-  background-color: var(--color-base-200) !important;
-  color: var(--color-base-content) !important;
-}
-
-.tox-tbtn svg {
-  fill: var(--color-base-content) !important;
-}
-
-.tox .tox-editor-header {
-  border-bottom: 1px solid var(--color-base-200) !important;
-}
-
-.tox .tox-tbtn:hover {
-  background-color: var(--color-base-300) !important;
-}
-
-/* End of Tiny MCE Editor Override css */
+/* Components Style css */
+@import "./components/wysiwyg.css";
