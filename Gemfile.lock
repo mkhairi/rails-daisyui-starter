@@ -120,7 +120,7 @@ GEM
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
-    enum_help (0.0.19)
+    enum_help (0.0.20)
       activesupport (>= 3.0.0)
     erb (5.0.2)
     erubi (1.13.1)
