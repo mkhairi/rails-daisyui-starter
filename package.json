@@ -9,10 +9,10 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
-    "daisyui": "^5.1.6",
+    "daisyui": "^5.1.13",
     "heroicons": "^2.2.0",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.12",
+    "tailwindcss": "^4.1.13",
     "tailwindcss-displaymodes": "^1.0.8",
     "tinymce": "^7.9.1"
   },
@@ -21,8 +21,8 @@
     "build:css": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.12",
-    "esbuild": "^0.25.9",
+    "@tailwindcss/cli": "^4.1.13",
+    "esbuild": "^0.25.10",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
     "postcss": "^8.5.6",
