@@ -1,5 +1,19 @@
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
+# Treat Rails templates as Ruby
+*.erb linguist-language=Ruby
+*.haml linguist-language=Ruby
+*.slim linguist-language=Ruby
+*.jbuilder linguist-language=Ruby
+*.rake linguist-language=Ruby
+
+# Ignore configs
+*.yml linguist-generated
+*.yaml linguist-generated
+*.json linguist-generated
+*.toml linguist-generated
+*.lock linguist-generated
+
 # Mark the database schema as having been generated.
 db/schema.rb linguist-generated
 
