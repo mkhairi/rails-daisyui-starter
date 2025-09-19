@@ -6,13 +6,14 @@
   See: <a href="https://heroicons.com/" target="_blank"> heroicons.com  </a>
 </div>
 <div class="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-x-6 gap-y-4 pb-16 pt-10 sm:pt-11 md:pt-12">
-  <% icons = Dir[icons_path.join('*.svg')]%>
+  <% icons = Dir[icons_path.join('*.svg')] %>
   <% icons.sample(100).each do |icon| %>
     <% icon_name = icon.split('/').last.split('.').first %>
     <div class="relative h-[8.5rem]">
-      <div class="icon-preview-icon tooltip" data-tip="<%=icon_name%>">
-        <%= icon icon_name, class: "size-#{(5..15).to_a.sample}" %>
+      <% klass = "size-#{(5..15).to_a.sample}" %>
+      <div class="icon-preview-icon tooltip" data-tip="&lt;%= icon '<%= icon_name %>', class: '<%= klass %>' %&gt;">
+        <%= icon icon_name, class: klass %>
       </div>
     </div>
-  <%end%>
+  <% end %>
 </div>
