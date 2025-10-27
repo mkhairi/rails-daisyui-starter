@@ -94,6 +94,9 @@ GEM
     brakeman (7.1.0)
       racc
     builder (3.3.0)
+    bundler-audit (0.9.2)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -128,6 +131,12 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
+    ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-aarch64-linux-musl)
+    ffi (1.17.2-arm-linux-gnu)
+    ffi (1.17.2-arm-linux-musl)
+    ffi (1.17.2-x86_64-linux-gnu)
+    ffi (1.17.2-x86_64-linux-musl)
     fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -135,6 +144,9 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    image_processing (1.14.0)
+      mini_magick (>= 4.9.5, < 6)
+      ruby-vips (>= 2.0.17, < 3)
     inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
@@ -174,8 +186,9 @@ GEM
       net-smtp
     marcel (1.1.0)
     matrix (0.4.3)
+    mini_magick (5.3.1)
+      logger
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.26.0)
     msgpack (1.8.0)
     net-imap (0.5.12)
@@ -193,9 +206,6 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.4)
-    nokogiri (1.18.10)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-musl)
@@ -203,10 +213,6 @@ GEM
     nokogiri (1.18.10-arm-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-arm-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.10-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -323,6 +329,9 @@ GEM
     ruby-lsp-rails (0.4.8)
       ruby-lsp (>= 0.26.0, < 0.27.0)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.5)
+      ffi (~> 1.12)
+      logger
     rubyzip (3.2.1)
     securerandom (0.4.1)
     selenium-webdriver (4.38.0)
@@ -359,10 +368,6 @@ GEM
     sqlite3 (2.7.4-aarch64-linux-musl)
     sqlite3 (2.7.4-arm-linux-gnu)
     sqlite3 (2.7.4-arm-linux-musl)
-    sqlite3 (2.7.4-arm64-darwin)
-    sqlite3 (2.7.4-x86-linux-gnu)
-    sqlite3 (2.7.4-x86-linux-musl)
-    sqlite3 (2.7.4-x86_64-darwin)
     sqlite3 (2.7.4-x86_64-linux-gnu)
     sqlite3 (2.7.4-x86_64-linux-musl)
     sshkit (1.24.0)
@@ -378,8 +383,6 @@ GEM
     thor (1.4.0)
     thruster (0.1.16)
     thruster (0.1.16-aarch64-linux)
-    thruster (0.1.16-arm64-darwin)
-    thruster (0.1.16-x86_64-darwin)
     thruster (0.1.16-x86_64-linux)
     timeout (0.4.3)
     tsort (0.2.0)
@@ -413,14 +416,8 @@ PLATFORMS
   aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux
   arm-linux-gnu
   arm-linux-musl
-  arm64-darwin
-  x86-linux
-  x86-linux-gnu
-  x86-linux-musl
-  x86_64-darwin
   x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
@@ -430,11 +427,13 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   brakeman
+  bundler-audit
   capybara
   cssbundling-rails
   debug
   devise
   enum_help
+  image_processing (~> 1.2)
   inline_svg
   jbuilder
   jsbundling-rails
@@ -460,4 +459,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.7.0
+   2.6.9
