@@ -2,31 +2,31 @@
   "name": "app",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.18",
-    "@rails/actioncable": "^8.1.0",
-    "@rails/activestorage": "^8.1.0",
-    "@rails/request.js": "^0.0.12",
+    "@hotwired/turbo-rails": "^8.0.23",
+    "@rails/actioncable": "^8.1.200",
+    "@rails/activestorage": "^8.1.200",
+    "@rails/request.js": "^0.0.13",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.19",
-    "autoprefixer": "^10.4.21",
-    "daisyui": "^5.3.10",
+    "autoprefixer": "^10.4.24",
+    "daisyui": "^5.5.18",
     "heroicons": "^2.2.0",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.16",
+    "tailwindcss": "^4.1.18",
     "tailwindcss-displaymodes": "^1.0.8",
-    "tinymce": "^7.9.1"
+    "tinymce": "^8.3.2"
   },
   "scripts": {
     "build": "node esbuild.config.mjs",
     "build:css": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.16",
-    "esbuild": "^0.25.11",
+    "@tailwindcss/cli": "^4.1.18",
+    "esbuild": "^0.27.3",
     "esbuild-plugin-copy": "^2.1.1",
     "esbuild-rails": "^1.0.7",
     "postcss": "^8.5.6",
-    "workbox-cli": "^7.3.0"
+    "workbox-cli": "^7.4.0"
   },
   "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9"
 }
