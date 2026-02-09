@@ -1,0 +1,1 @@
+ devise_for :users

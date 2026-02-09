@@ -1,18 +1,30 @@
 module.exports = {
-  globDirectory: 'public',
-  globPatterns: [
-    '**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,webm,xml}'
-  ],
-  globFollow: true,
-  globStrict: true,
-  globIgnores: [
-    '**/*-es5.*.js',
-    '3rdpartylicenses.txt',
-    'assets/images/icons/icon-*.png',
-    "assets/icons/*.svg"
-  ],
-  dontCacheBustURLsMatching: new RegExp('.+.[a-f0-9]{20}..+'),
-  maximumFileSizeToCacheInBytes: 5000000,
-  swSrc: './app/assets/builds/service-worker.js',
-  swDest: './public/service-worker.js'
-}
+    globDirectory: "public",
+    globPatterns: [
+        "**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,xml}",
+    ],
+    globFollow: true,
+    globIgnores: [
+        "service-worker.js",
+        "manifest.json",
+        "**/*-es5.*.js",
+        "3rdpartylicenses.txt",
+        "bg.jpg",
+        "assets/icons/**/*.svg",
+        "assets/themes/**/*.css",
+        "assets/hugerte/**/*.js",
+        "assets/hugerte/**/*.css",
+        "assets/tinymce/**/*.js",
+        "assets/tinymce/**/*.css",
+        "assets/**/pdf.css",
+        "assets/**/pdf.js",
+        "assets/**/mailer.css",
+        "assets/packs/**/*",
+        "assets/uploads/**/*",
+        "**/*.map",
+    ],
+    dontCacheBustURLsMatching: new RegExp(".+.[a-f0-9]{20}..+"),
+    maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+    swSrc: "./app/assets/builds/service-worker.js",
+    swDest: "./public/service-worker.js",
+};

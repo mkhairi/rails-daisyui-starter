@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#welcome"
 
-  devise_for :users
+
+  draw :user
 
   resources :pages
 end
